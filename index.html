@@ -1,1 +1,1344 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Lucie's Academic Hub — ethical academic support, tutoring, research guidance, proofreading, editing and student resources.">
+<title>Lucie's Academic Hub | Learn • Improve • Succeed</title>
 
+<style>
+:root{
+  --purple:#6d28d9;
+  --purple2:#8b5cf6;
+  --pink:#ec4899;
+  --dark:#24152f;
+  --muted:#6b6172;
+  --bg:#fcfaff;
+  --white:#fff;
+  --line:#eadff0;
+  --soft:#f4ecff;
+  --shadow:0 18px 55px rgba(71,35,110,.12);
+}
+
+*{
+  box-sizing:border-box;
+  margin:0;
+  padding:0;
+}
+
+html{
+  scroll-behavior:smooth;
+}
+
+body{
+  font-family:Inter,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+  color:var(--dark);
+  background:var(--bg);
+  line-height:1.7;
+}
+
+a{
+  text-decoration:none;
+  color:inherit;
+}
+
+.container{
+  width:min(1180px,92%);
+  margin:auto;
+}
+
+.section{
+  padding:100px 0;
+}
+
+.eyebrow{
+  font-size:.78rem;
+  text-transform:uppercase;
+  letter-spacing:.12em;
+  font-weight:900;
+  color:var(--purple);
+}
+
+.title{
+  font-size:clamp(2.2rem,5vw,3.7rem);
+  margin:10px 0 18px;
+  letter-spacing:-.035em;
+}
+
+.lead{
+  color:var(--muted);
+  max-width:820px;
+  font-size:1.05rem;
+}
+
+.center{
+  text-align:center;
+}
+
+.center .lead{
+  margin:auto;
+}
+
+.btn{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  gap:8px;
+  border:0;
+  border-radius:999px;
+  padding:13px 21px;
+  font-weight:850;
+  cursor:pointer;
+  transition:.25s;
+}
+
+.primary{
+  background:linear-gradient(135deg,var(--purple),var(--pink));
+  color:#fff;
+  box-shadow:0 12px 28px #6d28d933;
+}
+
+.primary:hover{
+  transform:translateY(-2px);
+}
+
+.outline{
+  background:#fff;
+  border:1px solid var(--line);
+  color:var(--purple);
+}
+
+.outline:hover{
+  background:var(--soft);
+}
+
+/* NAVIGATION */
+
+nav{
+  position:fixed;
+  top:0;
+  left:0;
+  width:100%;
+  z-index:100;
+  background:#ffffffea;
+  backdrop-filter:blur(18px);
+  border-bottom:1px solid var(--line);
+}
+
+.nav{
+  height:72px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+}
+
+.logo{
+  font-size:1.1rem;
+  font-weight:950;
+  color:#4c1d95;
+}
+
+.logo em{
+  font-style:normal;
+  color:var(--pink);
+}
+
+.links{
+  display:flex;
+  gap:20px;
+  align-items:center;
+  font-size:.88rem;
+  font-weight:700;
+}
+
+.links a:hover{
+  color:var(--purple);
+}
+
+.hamb{
+  display:none;
+  background:none;
+  border:0;
+  font-size:1.7rem;
+}
+
+/* HERO */
+
+.hero{
+  padding:150px 0 90px;
+  position:relative;
+  overflow:hidden;
+  background:
+    radial-gradient(circle at 5% 5%,#eadcff 0,transparent 35%),
+    radial-gradient(circle at 95% 5%,#ffe0ef 0,transparent 32%),
+    linear-gradient(135deg,#fff,#fbf8ff);
+}
+
+.hero-grid{
+  display:grid;
+  grid-template-columns:1.08fr .92fr;
+  gap:65px;
+  align-items:center;
+}
+
+.hero h1{
+  font-size:clamp(3.2rem,7vw,6rem);
+  letter-spacing:-.065em;
+  color:#4c1d95;
+}
+
+.hero h1 span{
+  color:var(--pink);
+}
+
+.hero .tag{
+  font-size:1.25rem;
+  font-weight:850;
+  margin-top:22px;
+}
+
+.hero p{
+  color:var(--muted);
+  font-size:1.08rem;
+  margin:15px 0;
+}
+
+.actions{
+  display:flex;
+  gap:12px;
+  flex-wrap:wrap;
+  margin-top:25px;
+}
+
+.pills{
+  display:flex;
+  flex-wrap:wrap;
+  gap:9px;
+  margin-top:25px;
+}
+
+.pill{
+  background:#fff;
+  border:1px solid var(--line);
+  padding:8px 13px;
+  border-radius:999px;
+  font-size:.8rem;
+  font-weight:750;
+  box-shadow:0 7px 20px #4c1d9508;
+}
+
+.hero-art{
+  height:470px;
+  border-radius:40px;
+  background:linear-gradient(145deg,#fff,#f0e4ff);
+  border:1px solid #e5d6f2;
+  box-shadow:var(--shadow);
+  position:relative;
+  display:grid;
+  place-items:center;
+  overflow:hidden;
+}
+
+.book{
+  width:235px;
+  height:275px;
+  border-radius:15px 30px 30px 15px;
+  background:linear-gradient(145deg,#7c3aed,#4c1d95);
+  transform:rotate(-7deg);
+  box-shadow:20px 25px 40px #4c1d9540;
+  display:grid;
+  place-items:center;
+  color:#fff;
+  font-weight:950;
+  font-size:1.35rem;
+  text-align:center;
+}
+
+.book small{
+  display:block;
+  font-size:.65rem;
+  letter-spacing:.12em;
+  margin-top:8px;
+}
+
+.ribbon{
+  position:absolute;
+  font-size:2.4rem;
+  animation:float 5s ease-in-out infinite;
+}
+
+.r1{top:9%;left:10%}
+.r2{right:10%;top:17%;animation-delay:1s}
+.r3{left:13%;bottom:12%;animation-delay:2s}
+.r4{right:15%;bottom:9%;animation-delay:3s}
+
+@keyframes float{
+  50%{
+    transform:translateY(-18px) rotate(7deg);
+  }
+}
+
+/* STATS */
+
+.stats{
+  display:grid;
+  grid-template-columns:repeat(5,1fr);
+  gap:13px;
+  margin-top:-28px;
+  position:relative;
+  z-index:2;
+}
+
+.stat{
+  background:#fff;
+  border:1px solid var(--line);
+  padding:22px 12px;
+  text-align:center;
+  border-radius:20px;
+  box-shadow:var(--shadow);
+}
+
+.stat b{
+  font-size:1.65rem;
+  color:#4c1d95;
+  display:block;
+}
+
+.stat span{
+  font-size:.8rem;
+  color:var(--muted);
+}
+
+/* ABOUT */
+
+.grid2{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:50px;
+  align-items:start;
+}
+
+.feature-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:15px;
+}
+
+.feature,
+.box{
+  background:#fff;
+  border:1px solid var(--line);
+  border-radius:20px;
+  padding:23px;
+  box-shadow:0 8px 28px #4c1d9508;
+}
+
+.feature h3{
+  margin:8px 0;
+}
+
+.feature p,
+.box p{
+  color:var(--muted);
+  font-size:.91rem;
+}
+
+.mission{
+  margin-top:18px;
+  color:var(--muted);
+}
+
+/* INTEGRITY */
+
+.integrity{
+  background:linear-gradient(135deg,#3b176c,#6d28d9);
+  color:#fff;
+}
+
+.integrity .lead{
+  color:#eee;
+}
+
+.integrity-card{
+  margin-top:32px;
+  padding:35px;
+  border-radius:28px;
+  background:#ffffff14;
+  border:1px solid #ffffff2d;
+}
+
+.quote{
+  font-size:clamp(1.6rem,3vw,2.5rem);
+  font-weight:950;
+  margin-bottom:13px;
+}
+
+.checklist{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:12px;
+  margin-top:22px;
+}
+
+.check{
+  background:#ffffff10;
+  border-radius:15px;
+  padding:13px;
+}
+
+/* SERVICES */
+
+.cards{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:19px;
+  margin-top:45px;
+}
+
+.service{
+  padding:26px;
+  background:#fff;
+  border:1px solid var(--line);
+  border-radius:24px;
+  box-shadow:0 9px 28px #4c1d9508;
+  transition:.25s;
+}
+
+.service:hover{
+  transform:translateY(-5px);
+  box-shadow:var(--shadow);
+}
+
+.ico{
+  font-size:2rem;
+}
+
+.service h3{
+  margin:10px 0;
+}
+
+.service p{
+  color:var(--muted);
+  font-size:.92rem;
+}
+
+.learn{
+  display:inline-block;
+  color:var(--purple);
+  font-weight:850;
+  margin-top:16px;
+  font-size:.88rem;
+}
+
+/* SUBJECTS */
+
+.subjects{
+  background:#f8f4ff;
+}
+
+.subject-grid{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:13px;
+  margin-top:40px;
+}
+
+.subject{
+  background:#fff;
+  padding:18px;
+  border-radius:17px;
+  border:1px solid var(--line);
+}
+
+.subject b{
+  display:block;
+}
+
+.subject small{
+  color:var(--muted);
+}
+
+/* STEPS */
+
+.steps{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:18px;
+  margin-top:45px;
+}
+
+.step{
+  background:#fff;
+  border:1px solid var(--line);
+  padding:28px;
+  border-radius:23px;
+}
+
+.num{
+  width:43px;
+  height:43px;
+  border-radius:50%;
+  display:grid;
+  place-items:center;
+  background:var(--soft);
+  color:var(--purple);
+  font-weight:950;
+  margin-bottom:14px;
+}
+
+/* RESOURCES */
+
+.tips{
+  background:#fff3fa;
+}
+
+.resource-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:18px;
+  margin-top:42px;
+}
+
+.resource{
+  background:#fff;
+  border:1px solid #f0dce8;
+  border-radius:20px;
+  padding:24px;
+}
+
+.resource h3{
+  margin-bottom:8px;
+}
+
+.resource p{
+  color:var(--muted);
+  font-size:.9rem;
+}
+
+.resource button{
+  border:0;
+  background:none;
+  color:var(--purple);
+  font-weight:850;
+  margin-top:14px;
+  cursor:pointer;
+}
+
+/* REVIEWS */
+
+.review-layout{
+  display:grid;
+  grid-template-columns:.75fr 1.25fr;
+  gap:28px;
+  margin-top:45px;
+}
+
+.summary{
+  background:linear-gradient(145deg,#f5edff,#fff);
+  border:1px solid var(--line);
+  border-radius:28px;
+  padding:30px;
+}
+
+.rating-number{
+  font-size:4rem;
+  font-weight:950;
+  color:#4c1d95;
+  line-height:1;
+}
+
+.stars{
+  color:#f59e0b;
+  letter-spacing:2px;
+}
+
+.bar{
+  margin:12px 0;
+}
+
+.barrow{
+  height:9px;
+  background:#ebe3f0;
+  border-radius:20px;
+  overflow:hidden;
+}
+
+.barrow i{
+  display:block;
+  height:100%;
+  background:linear-gradient(90deg,var(--purple),var(--pink));
+}
+
+.review-list{
+  display:grid;
+  gap:15px;
+}
+
+.review{
+  background:#fff;
+  border:1px solid var(--line);
+  padding:23px;
+  border-radius:20px;
+}
+
+.review-head{
+  display:flex;
+  justify-content:space-between;
+  gap:15px;
+}
+
+.review small{
+  color:var(--muted);
+}
+
+.review p{
+  margin:8px 0;
+  color:#51475a;
+}
+
+.demo{
+  display:inline-block;
+  font-size:.7rem!important;
+  font-weight:900;
+  color:#9a3412!important;
+  background:#ffedd5;
+  padding:3px 7px;
+  border-radius:99px;
+}
+
+/* REVIEW FORM */
+
+.form-bg{
+  background:#faf7ff;
+}
+
+.form-card{
+  max-width:900px;
+  margin:42px auto 0;
+  background:#fff;
+  border:1px solid var(--line);
+  box-shadow:var(--shadow);
+  border-radius:28px;
+  padding:35px;
+}
+
+.notice{
+  background:#f5edff;
+  color:#5b21b6;
+  padding:14px 16px;
+  border-radius:14px;
+  font-size:.87rem;
+  margin-bottom:22px;
+}
+
+.form-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:17px;
+}
+
+.field{
+  display:flex;
+  flex-direction:column;
+  gap:7px;
+}
+
+.field.full{
+  grid-column:1/-1;
+}
+
+.field label{
+  font-weight:800;
+  font-size:.9rem;
+}
+
+.field input,
+.field select,
+.field textarea{
+  border:1px solid #ded3e5;
+  border-radius:14px;
+  padding:13px 14px;
+  outline:none;
+  background:#fff;
+}
+
+.field textarea{
+  min-height:145px;
+  resize:vertical;
+}
+
+.field input:focus,
+.field select:focus,
+.field textarea:focus{
+  border-color:var(--purple);
+  box-shadow:0 0 0 3px #ede9fe;
+}
+
+.rating-picker{
+  display:flex;
+  gap:4px;
+}
+
+.rating-picker button{
+  font-size:2rem;
+  background:none;
+  border:0;
+  cursor:pointer;
+  color:#c9c0d0;
+}
+
+.rating-picker button.on{
+  color:#f59e0b;
+}
+
+.counter{
+  font-size:.78rem;
+  color:var(--muted);
+}
+
+.success{
+  display:none;
+  margin-top:15px;
+  background:#ecfdf5;
+  color:#047857;
+  padding:13px;
+  border-radius:13px;
+  font-weight:750;
+}
+
+.admin{
+  margin-top:30px;
+  border-top:1px solid var(--line);
+  padding-top:25px;
+}
+
+.admin-list{
+  display:grid;
+  gap:10px;
+  margin-top:15px;
+}
+
+.pending{
+  border:1px dashed #c4b5fd;
+  border-radius:14px;
+  padding:15px;
+  background:#faf7ff;
+}
+
+.admin-actions{
+  display:flex;
+  gap:7px;
+  flex-wrap:wrap;
+  margin-top:10px;
+}
+
+.mini{
+  padding:8px 12px;
+  border-radius:10px;
+  border:0;
+  cursor:pointer;
+  font-weight:750;
+}
+
+.approve{
+  background:#dcfce7;
+  color:#166534;
+}
+
+.reject{
+  background:#fee2e2;
+  color:#991b1b;
+}
+
+.delete{
+  background:#eee7f4;
+  color:#4c1d95;
+}
+
+/* FAQ */
+
+.faq{
+  display:grid;
+  gap:11px;
+  max-width:900px;
+  margin:42px auto 0;
+}
+
+.faq-item{
+  border:1px solid var(--line);
+  border-radius:16px;
+  overflow:hidden;
+  background:#fff;
+}
+
+.faq-q{
+  width:100%;
+  background:#fff;
+  border:0;
+  padding:18px;
+  text-align:left;
+  font-weight:850;
+  display:flex;
+  justify-content:space-between;
+  cursor:pointer;
+}
+
+.faq-a{
+  display:none;
+  padding:0 18px 18px;
+  color:var(--muted);
+}
+
+.faq-item.open .faq-a{
+  display:block;
+}
+
+/* CONTACT */
+
+.contact{
+  background:linear-gradient(135deg,#f0e5ff,#ffe8f3);
+}
+
+.contact-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:25px;
+}
+
+.contact-card{
+  background:#fff;
+  border:1px solid var(--line);
+  border-radius:27px;
+  padding:32px;
+}
+
+.contact-card p{
+  color:var(--muted);
+  margin:10px 0 22px;
+}
+
+.wa{
+  background:#22c55e;
+  color:#fff;
+}
+
+/* FOOTER */
+
+.footer{
+  background:#21142c;
+  color:#cfc4d7;
+  padding:65px 0 25px;
+}
+
+.footer-grid{
+  display:grid;
+  grid-template-columns:1.5fr 1fr 1fr 1fr;
+  gap:30px;
+}
+
+.footer h3,
+.footer h4{
+  color:#fff;
+}
+
+.footer a{
+  display:block;
+  margin:7px 0;
+  font-size:.9rem;
+}
+
+.footer p{
+  font-size:.9rem;
+}
+
+.copy{
+  border-top:1px solid #3b2d45;
+  margin-top:35px;
+  padding-top:20px;
+  text-align:center;
+  font-size:.8rem;
+}
+
+/* MODAL */
+
+.modal{
+  display:none;
+  position:fixed;
+  inset:0;
+  background:#20102799;
+  z-index:200;
+  padding:25px;
+  align-items:center;
+  justify-content:center;
+}
+
+.modal.show{
+  display:flex;
+}
+
+.modalbox{
+  background:#fff;
+  max-width:700px;
+  width:100%;
+  max-height:82vh;
+  overflow:auto;
+  padding:32px;
+  border-radius:25px;
+  position:relative;
+}
+
+.close{
+  position:absolute;
+  right:16px;
+  top:13px;
+  border:0;
+  background:var(--soft);
+  width:35px;
+  height:35px;
+  border-radius:50%;
+  cursor:pointer;
+  font-size:1.2rem;
+}
+
+.toast{
+  display:none;
+  position:fixed;
+  right:20px;
+  bottom:20px;
+  z-index:250;
+  background:#21142c;
+  color:#fff;
+  padding:14px 18px;
+  border-radius:14px;
+  box-shadow:var(--shadow);
+}
+
+/* ANIMATION */
+
+.reveal{
+  opacity:0;
+  transform:translateY(22px);
+  transition:.65s;
+}
+
+.reveal.show{
+  opacity:1;
+  transform:none;
+}
+
+/* RESPONSIVE */
+
+@media(max-width:950px){
+
+  .links{
+    display:none;
+    position:absolute;
+    top:72px;
+    left:0;
+    width:100%;
+    padding:18px;
+    background:#fff;
+    flex-direction:column;
+    align-items:flex-start;
+    border-bottom:1px solid var(--line);
+  }
+
+  .links.open{
+    display:flex;
+  }
+
+  .links .btn{
+    width:100%;
+  }
+
+  .hamb{
+    display:block;
+  }
+
+  .hero-grid,
+  .grid2,
+  .review-layout,
+  .contact-grid{
+    grid-template-columns:1fr;
+  }
+
+  .cards,
+  .resource-grid{
+    grid-template-columns:repeat(2,1fr);
+  }
+
+  .subject-grid{
+    grid-template-columns:repeat(3,1fr);
+  }
+
+  .steps{
+    grid-template-columns:repeat(2,1fr);
+  }
+
+  .stats{
+    grid-template-columns:repeat(3,1fr);
+  }
+
+  .footer-grid{
+    grid-template-columns:repeat(2,1fr);
+  }
+}
+
+@media(max-width:620px){
+
+  .section{
+    padding:72px 0;
+  }
+
+  .hero{
+    padding-top:120px;
+  }
+
+  .hero-art{
+    height:330px;
+  }
+
+  .cards,
+  .resource-grid,
+  .subject-grid,
+  .steps,
+  .feature-grid,
+  .form-grid{
+    grid-template-columns:1fr;
+  }
+
+  .field.full{
+    grid-column:auto;
+  }
+
+  .stats{
+    grid-template-columns:1fr 1fr;
+  }
+
+  .checklist{
+    grid-template-columns:1fr;
+  }
+
+  .footer-grid{
+    grid-template-columns:1fr;
+  }
+
+  .hero h1{
+    font-size:3.2rem;
+  }
+
+  .form-card{
+    padding:22px;
+  }
+
+  .review-head{
+    flex-direction:column;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<!-- NAVIGATION -->
+<nav>
+<div class="container nav">
+
+<a class="logo" href="#home">
+🎀 <em>Lucie's</em> Academic Hub
+</a>
+
+<button class="hamb" aria-label="Menu">☰</button>
+
+<div class="links">
+<a href="#about">About</a>
+<a href="#services">Services</a>
+<a href="#subjects">Subjects</a>
+<a href="#process">How It Works</a>
+<a href="#resources">Resources</a>
+<a href="#reviews">Reviews</a>
+<a href="#faq">FAQ</a>
+<a href="#contact">Contact</a>
+<a class="btn primary" href="#write-review">Rate Us</a>
+</div>
+
+</div>
+</nav>
+
+
+<!-- HERO -->
+<section class="hero" id="home">
+
+<div class="container hero-grid">
+
+<div class="reveal">
+
+<div class="eyebrow">
+Reliable • Confidential • On-Time
+</div>
+
+<h1>
+🎀 Lucie's
+<span>Academic</span>
+Hub
+</h1>
+
+<div class="tag">
+Helping You Learn, Improve & Succeed.
+</div>
+
+<p>
+Professional academic support designed to help students understand coursework,
+strengthen academic skills, improve writing, organize research and study with
+greater confidence.
+</p>
+
+<p>
+From assignment guidance and proofreading to research support and tutoring,
+we focus on practical help that supports genuine learning.
+</p>
+
+<div class="actions">
+
+<a class="btn primary" href="#services">
+Explore Services →
+</a>
+
+<a class="btn outline" href="#contact">
+Get Academic Support
+</a>
+
+</div>
+
+<div class="pills">
+<span class="pill">🎓 Student-Focused</span>
+<span class="pill">🔒 Confidential</span>
+<span class="pill">📚 Learning-Oriented</span>
+<span class="pill">✍️ Quality Support</span>
+</div>
+
+</div>
+
+
+<div class="hero-art reveal">
+
+<span class="ribbon r1">🎀</span>
+<span class="ribbon r2">📚</span>
+<span class="ribbon r3">✏️</span>
+<span class="ribbon r4">🎀</span>
+
+<div class="book">
+LUCIE'S<br>
+ACADEMIC<br>
+HUB
+
+<small>
+LEARN • IMPROVE • SUCCEED
+</small>
+</div>
+
+</div>
+
+</div>
+</section>
+
+
+<!-- STATS -->
+<div class="container stats reveal">
+
+<div class="stat">
+<b>15+</b>
+<span>Support Areas</span>
+</div>
+
+<div class="stat">
+<b>20+</b>
+<span>Subjects</span>
+</div>
+
+<div class="stat">
+<b>18+</b>
+<span>Study Guides</span>
+</div>
+
+<div class="stat">
+<b>24/7</b>
+<span>Contact Availability</span>
+</div>
+
+<div class="stat">
+<b>100%</b>
+<span>Learning-Focused</span>
+</div>
+
+</div>
+
+
+<!-- ABOUT -->
+<section class="section" id="about">
+
+<div class="container grid2">
+
+<div class="reveal">
+
+<div class="eyebrow">Who We Are</div>
+
+<h2 class="title">
+A supportive space for better academic learning.
+</h2>
+
+<p class="lead">
+Lucie's Academic Hub is an academic support platform created around a simple
+principle: students should be able to ask questions, get guidance and improve
+their skills without compromising academic integrity.
+</p>
+
+<p class="mission">
+Academic work can become overwhelming when instructions are unclear,
+deadlines are close or a research topic feels difficult. We help make those
+challenges easier to understand by breaking them into manageable steps and
+providing practical guidance.
+</p>
+
+<p class="mission">
+Our support can include tutoring, feedback, proofreading, editing, research
+guidance, referencing support, study planning and explanations of difficult
+concepts.
+</p>
+
+<p class="mission">
+We aim to make every interaction useful, respectful and focused on building
+skills that can be applied to future academic work.
+</p>
+
+</div>
+
+
+<div class="feature-grid reveal">
+
+<div class="feature">
+🎯
+<h3>Our Mission</h3>
+<p>
+Provide accessible, practical academic guidance that helps students become
+more confident and capable learners.
+</p>
+</div>
+
+<div class="feature">
+🌱
+<h3>Our Vision</h3>
+<p>
+Create a welcoming academic environment where students can find guidance,
+resources and encouragement.
+</p>
+</div>
+
+<div class="feature">
+🤝
+<h3>Our Approach</h3>
+<p>
+Listen to the student's needs, clarify the challenge and recommend
+learning-focused support.
+</p>
+</div>
+
+<div class="feature">
+💜
+<h3>Our Values</h3>
+<p>
+Integrity, confidentiality, clarity, respect, responsibility and continuous
+improvement.
+</p>
+</div>
+
+<div class="feature">
+🧭
+<h3>Our Promise</h3>
+<p>
+To keep academic support centered on understanding, responsible research
+and skill development.
+</p>
+</div>
+
+<div class="feature">
+✨
+<h3>Our Goal</h3>
+<p>
+Help students approach academic tasks with better organization, stronger
+writing and greater confidence.
+</p>
+</div>
+
+</div>
+
+</div>
+</section>
+
+
+<!-- ACADEMIC INTEGRITY -->
+<section class="section integrity">
+
+<div class="container reveal">
+
+<div class="eyebrow" style="color:#fbcfe8">
+Academic Integrity
+</div>
+
+<h2 class="title">
+Learn. Improve. Stay Honest. 🎀
+</h2>
+
+<p class="lead">
+Lucie's Academic Hub provides ethical academic support. We do not promote
+cheating, plagiarism, impersonation, academic fraud or completing exams on
+behalf of students.
+</p>
+
+<div class="integrity-card">
+
+<div class="quote">
+“We don't do your education for you — we help you do it better. 🎀”
+</div>
+
+<p>
+Our role is to support learning. We can explain concepts, give feedback on a
+student's work, help with structure and research, guide referencing, support
+proofreading and provide study resources.
+</p>
+
+<div class="checklist">
+
+<div class="check">✓ Tutoring & explanations</div>
+<div class="check">✓ Feedback on student work</div>
+<div class="check">✓ Research guidance</div>
+<div class="check">✓ Proofreading & editing</div>
+<div class="check">✓ Referencing guidance</div>
+<div class="check">✓ Study planning</div>
+
+</div>
+
+</div>
+
+</div>
+</section>
+
+
+<!-- SERVICES -->
+<section class="section" id="services">
+
+<div class="container">
+
+<div class="center reveal">
+
+<div class="eyebrow">
+What We Offer
+</div>
+
+<h2 class="title">
+Comprehensive Academic Support
+</h2>
+
+<p class="lead">
+Explore support areas designed to help students understand tasks, improve
+drafts, develop research skills and study more effective for 
